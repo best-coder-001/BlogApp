@@ -1,7 +1,7 @@
 # BlogApp
 
 ## Description
-The application using KivyMD, there is an github link [KivyMD](https://www.python.org)
+The application using KivyMD, there is an github link [KivyMD](https://github.com/kivymd/KivyMD)
 
 ## Installation
 Application installation:
