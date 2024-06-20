@@ -1,17 +1,19 @@
-# Название проекта
+# BlogApp
 
-## Описание
-Краткое описание проекта, его целей и функций.
+## Description
+The application using KivyMD, there is an github link [KivyMD](https://www.python.org)
 
-## Установка
-Шаги по установке зависимостей и самого проекта.
-
+## Installation
+Application installation:
 ```bash
-# Клонируйте репозиторий
+# clone repo
 git clone https://github.com/ваш-репозиторий
 
-# Перейдите в директорию проекта
-cd ваш-репозиторий
+# got to app dir
+cd app_dir
 
-# Установите зависимости
-npm install
+# Dependencies installation
+pip install -r requirements.txt
+
+# run app
+python app.py
