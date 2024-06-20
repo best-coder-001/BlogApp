@@ -1,0 +1,88 @@
+<MainScreenView>:
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDBoxLayout:
+        padding: '12dp'
+        orientation: 'vertical'
+        spacing: '12dp'
+        adaptive_height: True
+        size_hint_x: 1
+        pos_hint: {"center_x": .5, "center_y": .5}
+
+        MDLabel:
+            text: '[b]Login[/b]'
+            markup: True
+            adaptive_height: True
+            theme_text_color: "Custom"
+            font_style: "Display"
+            role: "large"
+            text_color: self.theme_cls.primaryColor
+        MDWidget:
+            size_hint_y: None
+            height: '40dp'
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: '16dp'
+            adaptive_height: True
+            size_hint_x: 1
+            pos_hint: {"center_x": .5, "center_y": .5}
+
+            MDTextField:
+                id: username
+                mode: "outlined"
+                on_text: root.controller.set_user_data('username',self.text)
+
+                MDTextFieldLeadingIcon:
+                    icon: "account"
+
+                MDTextFieldHintText:
+                    text: "Username"
+
+            MDTextField:
+                id: password
+                mode: "outlined"
+                on_text: root.controller.set_user_data('password',self.text)
+                MDTextFieldLeadingIcon:
+                    icon: "key"
+
+                MDTextFieldHintText:
+                    text: "Password"
+        MDWidget:
+            size_hint_y: None
+            height: '80dp'
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: '12dp'
+            adaptive_height: True
+            size_hint_x: 1
+            pos_hint: {"center_x": .5, "center_y": .5}
+
+            MDButton:
+                style: "filled"
+                theme_width: 'Custom'
+                theme_height: 'Custom'
+                radius: 4
+                size_hint_x: 1
+                height: dp(45)
+                padding: '8dp'
+                on_release:
+                    root.controller.on_login_button()
+
+                MDButtonText:
+                    text: "Login"
+                    font_style: "Headline"
+                    role: "medium"
+                    pos_hint: {"center_x": .5, "center_y": .5}
+            MDButton:
+                style: "text"
+                pos_hint: {"center_x": .5, "center_y": .5}
+                radius: 4
+                on_release:
+                    app.change_screens('registration screen')
+                MDButtonText:
+                    markup: True
+                    font_style: "Title"
+                    role: "medium"
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    text: "Dont have an account? [b]Sign up[/b]"

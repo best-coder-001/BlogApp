@@ -1,0 +1,63 @@
+<BlogPostCard>:
+    size_hint: 1,None
+    height: '440dp'
+    orientation: 'vertical'
+    radius: '4dp'
+    MDBoxLayout:
+        id: img_wrap
+        size_hint: 1,None
+        height: '200dp'
+        padding: '4dp'
+        MDRelativeLayout:
+            size: img_wrap.size
+
+            FitImage:
+                size: img_wrap.size
+                source: root.image
+                radius: '8dp'
+            MDIconButton:
+                icon: "heart-outline"
+                size_hint: None, None
+                font_size: "48sp"
+                size: "48dp", "48dp"
+                pos_hint: {'right': 1,'top': 1}
+                theme_icon_color: "Custom"
+                icon_color: "tomato"
+                on_release: 
+                    root.on_heart_button()
+                    self.icon = 'heart' if self.icon == 'heart-outline' else 'heart-outline'
+    MDBoxLayout:
+        adaptive_height: True
+        padding: '16dp'
+        spacing: '24dp'
+        orientation: 'vertical'
+        MDLabel:
+            text: root.title
+            adaptive_height: True
+            halign: 'left'
+            font_style: 'Title'
+            role: 'large'
+        MDLabel:
+            text: root.description[:150] + ' ...' 
+            adaptive_height: True
+            halign: 'left'
+            font_style: 'Body'
+            role: 'large'
+        MDBoxLayout:
+            adaptive_height: True
+            spacing: '24dp'
+            MDLabel:
+                text: root.created_at 
+                adaptive_height: True
+                halign: 'left'
+                font_style: 'Body'
+                role: 'large'
+            MDWidget:
+            MDButton:
+                style: 'filled'
+                radius: '4dp'
+                md_bg_color: self.theme_cls.primaryColor
+                pos_hint: {'right': 1,'center_y': 0.5}
+                MDButtonText:
+                    text: 'READ MORE'
+                    halign: 'center'
