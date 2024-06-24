@@ -9,8 +9,8 @@ Application installation:
 # clone repo
 git clone https://github.com/ваш-репозиторий
 
-# got to app dir
-cd app_dir
+# go to app dir
+cd LoginUI
 
 # Dependencies installation
 pip install -r requirements.txt
