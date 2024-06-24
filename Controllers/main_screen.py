@@ -20,7 +20,7 @@ class MainScreenController:
 
     def on_login_button(self):
         try:
-            self.model.authorization()
+            self.model.login()
             logger.log('info','Success login from user %s',self.model.user)
         except Exception as ex:
             logger.log('error','Login failed. Reason: %s',str(ex))

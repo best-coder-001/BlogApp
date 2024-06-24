@@ -10,7 +10,6 @@
         padding: '4dp'
         MDRelativeLayout:
             size: img_wrap.size
-
             FitImage:
                 size: img_wrap.size
                 source: root.image
@@ -58,6 +57,8 @@
                 radius: '4dp'
                 md_bg_color: self.theme_cls.primaryColor
                 pos_hint: {'right': 1,'center_y': 0.5}
+                on_release:
+                    root.on_read_more(app)
                 MDButtonText:
                     text: 'READ MORE'
                     halign: 'center'

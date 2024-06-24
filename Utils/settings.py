@@ -1,6 +1,7 @@
 from typing import Optional
 from kivy.config import Config
 from kivy.resources import resource_add_path
+from kivy.storage.jsonstore import JsonStore
 from kivy.logger import Logger,LOG_LEVELS
 import os
 
@@ -32,8 +33,11 @@ class AppLogger:
 
     def log(self,level: str,msg: str,*args): 
         Logger.log(LOG_LEVELS[level],msg,*args)
-
-
+        
 app_env = AppEnviroment()
 app_config = AppConfiguration()
 logger = AppLogger()
+
+storage = JsonStore(os.path.join(app_env.DATA_PATH,'storage.json'),indent=4)
+users_storage = JsonStore(os.path.join(app_env.DATA_PATH,'users.json'),indent=4)
+cards_storage = JsonStore(os.path.join(app_env.DATA_PATH,'cards.json'),indent=4)

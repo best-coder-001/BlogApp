@@ -22,7 +22,7 @@ class RegistrationScreenController:
 
     def on_registration_button(self):
         try:
-            self.model.registration()
+            self.model.register()
             logger.log('info','Success registration from user %s',str(self.model.user))
         except Exception as ex:
             print(ex)

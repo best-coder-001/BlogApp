@@ -1,0 +1,77 @@
+<CardDetailsScreenView>:
+    md_bg_color: root.theme_cls.backgroundColor
+    MDBoxLayout:
+        size_hint_x: 1
+        orientation: 'vertical'
+        MDTopAppBar:
+            type: "small"
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: "arrow-left"
+                    size_hint: None, None
+                    font_size: "48sp"
+                    size: "48dp", "48dp"
+                    on_release: 
+                        app.change_screens('home screen')
+                        on_release: root.controller.on_arrow_left()
+            MDTopAppBarTitle:
+                text: "Details"
+        MDBoxLayout:
+            orientation: 'vertical'
+            MDScrollView:
+                do_scroll_x: False 
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    adaptive_height: True
+                    padding: '12dp'
+                    MDBoxLayout:
+                        id: img_wrap
+                        size_hint: 1,None
+                        height: '200dp'
+                        padding: '4dp'
+                        MDRelativeLayout:
+                            size: img_wrap.size
+                            FitImage:
+                                id: image
+                                size: img_wrap.size
+                                source: ""
+                                radius: '8dp'
+                            MDIconButton:
+                                icon: "heart-outline"
+                                size_hint: None, None
+                                font_size: "48sp"
+                                size: "48dp", "48dp"
+                                pos_hint: {'right': 1,'top': 1}
+                                theme_icon_color: "Custom"
+                                icon_color: "tomato"
+                                on_release: 
+                                    self.icon = 'heart' if self.icon == 'heart-outline' else 'heart-outline'
+                    MDBoxLayout:
+                        adaptive_height: True
+                        padding: '16dp'
+                        spacing: '24dp'
+                        orientation: 'vertical'
+                        MDLabel:
+                            id: title
+                            text: ""
+                            adaptive_height: True
+                            halign: 'left'
+                            font_style: 'Title'
+                            role: 'large'
+                        MDLabel:
+                            id: description
+                            text: ""
+                            adaptive_height: True
+                            halign: 'left'
+                            font_style: 'Body'
+                            role: 'large'
+                        MDBoxLayout:
+                            adaptive_height: True
+                            MDLabel:
+                                id: created_at
+                                text: ""
+                                adaptive_height: True
+                                halign: 'left'
+                                font_style: 'Body'
+                                role: 'large'
+                                pos_hint: {'center_x': 0.5,'center_y': 0.5}  

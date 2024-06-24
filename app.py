@@ -16,6 +16,7 @@ class LoginUI(MDApp):
             duration=0.35,
             transition_axis='x'
             ))
+        self.extra_transfer_kwargs = {}
         self.load_all_kv_files(self.directory)
         self.theme_cls.theme_style = "Dark"
         

@@ -1,0 +1,2 @@
+class ProfileScreenModel:
+    pass

@@ -1,0 +1,70 @@
+<BlogAppNavDrawer>:
+    id: nav_drawer 
+    radius: [0,4,4,0]
+    MDNavigationDrawerMenu:
+        spacing: '10dp'
+        
+        MDNavigationDrawerLabel:
+            text: "Menu"
+            font_style: 'Title'
+            role: 'large'
+
+        MDNavigationDrawerItem:
+            active_indicator_color: rgba(0,0,0,0)
+            inactive_indicator_color: rgba(0,0,0,0)
+            on_release:
+                app.change_screens('home screen')
+                nav_drawer.set_state('close')
+            MDNavigationDrawerItemLeadingIcon:
+                icon: "home-outline"
+            MDNavigationDrawerItemText:
+                text: "Home"
+
+        MDNavigationDrawerItem:
+            active_indicator_color: rgba(0,0,0,0)
+            active_indicator_color: rgba(0,0,0,0)
+            on_release:
+                app.change_screens('your posts screen')
+                nav_drawer.set_state('close')
+            MDNavigationDrawerItemLeadingIcon:
+                icon: "post-outline"
+            MDNavigationDrawerItemText:
+                text: "Your posts"
+            MDNavigationDrawerItemTrailingText:
+                text: "70"
+
+        MDNavigationDrawerItem:
+            active_indicator_color: rgba(0,0,0,0)
+            active_indicator_color: rgba(0,0,0,0)
+            on_release:
+                app.change_screens('favorite cards screen')
+                nav_drawer.set_state('close')
+            MDNavigationDrawerItemLeadingIcon:
+                icon: "heart-outline"
+            MDNavigationDrawerItemText:
+                text: "Favorites"
+            MDNavigationDrawerItemTrailingText:
+                text: "45"
+
+
+        MDNavigationDrawerItem:
+            active_indicator_color: rgba(0,0,0,0)
+            active_indicator_color: rgba(0,0,0,0)
+            on_release:
+                app.change_screens('settings screen')
+                nav_drawer.set_state('close')
+            MDNavigationDrawerItemLeadingIcon:
+                icon: "cog-outline"
+            MDNavigationDrawerItemText:
+                text: "Settings"
+
+        MDNavigationDrawerItem:
+            active_indicator_color: rgba(0,0,0,0)
+            active_indicator_color: rgba(0,0,0,0)
+            on_release: 
+                app.change_screens('main screen')
+                nav_drawer.set_state('close')
+            MDNavigationDrawerItemLeadingIcon:
+                icon: "logout"
+            MDNavigationDrawerItemText:
+                text: "Exit"
